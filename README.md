@@ -1,3 +1,22 @@
+Pages:
+    Create login - allows new user to choose username and password
+    Login - allows user to enter username and password and continue to homepage
+    Homepage - 'App.js'; switch page for other pages
+
+Components:
+    Main - main view page, landing area for search results
+        category search - 
+        date search - 
+        vendory search - 
+
+    Data entry - allows user to enter new financial data
+        date, category, vendor, amount spent
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

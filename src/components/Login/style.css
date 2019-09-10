@@ -1,0 +1,12 @@
+.login {
+  width: 50%;
+  margin: auto;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.to-login {
+  float: right;
+}
+/*# sourceMappingURL=style.css.map */
