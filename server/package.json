@@ -3,16 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
   "author": "Stelios",
   "license": "ISC",
   "dependencies": {
@@ -27,5 +17,17 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "api": "nodemon ./server/server.js",
+    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   }
 }
