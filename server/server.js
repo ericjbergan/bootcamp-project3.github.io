@@ -6,7 +6,10 @@ const dbConnection = require('./database')
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const app = express()
-const PORT = 8080
+
+const PORT = process.env.PORT || 5000 
+
+
 // Route requires
 const user = require('./routes/user')
 
@@ -17,7 +20,14 @@ app.use(
 		extended: false
 	})
 )
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+
+
+// DB Config 
+// CONNECT to mongo
+
+
 
 // Sessions
 app.use(
