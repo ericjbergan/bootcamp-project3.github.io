@@ -9,6 +9,13 @@ const userSchema = new Schema({
 	username: { type: String, unique: false, required: false },
 	password: { type: String, unique: false, required: false },
 
+
+ userCreated: {
+    type: Date,
+    default: Date.now
+  },
+
+
 expenses: [
     {
       // Store ObjectIds in the array
@@ -18,7 +25,11 @@ expenses: [
     }
   ]
 
+
 });
+
+
+
 
 // Define schema methods
 userSchema.methods = {
