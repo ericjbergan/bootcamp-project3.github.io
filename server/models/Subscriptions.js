@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new NoteSchema object
 // This is similar to a Sequelize model
-var expenseSchema = new Schema({
+var Schema = new Schema({
   // `title` must be of type String
   amount:{
     type: String,
@@ -25,10 +25,10 @@ var expenseSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var expenses = mongoose.model("expenses", expenseSchema);
+var subscription = mongoose.model("subscription", Schema);
 
 // Export the Note model
-module.exports = expenses;
+module.exports = subscription;
 
 
 

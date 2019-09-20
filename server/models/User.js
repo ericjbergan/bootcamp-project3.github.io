@@ -18,9 +18,7 @@ expenses: [
     }
   ]
 
-
-})
-
+});
 
 // Define schema methods
 userSchema.methods = {
@@ -31,6 +29,8 @@ userSchema.methods = {
 		return bcrypt.hashSync(plainTextPassword, 10)
 	}
 }
+
+
 
 // Define hooks for pre-saving
 userSchema.pre('save', function (next) {
@@ -44,6 +44,8 @@ userSchema.pre('save', function (next) {
 		next()
 	}
 })
+
+
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
