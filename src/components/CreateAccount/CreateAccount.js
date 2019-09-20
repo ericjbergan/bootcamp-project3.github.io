@@ -17,7 +17,7 @@ function CreateAccount() {
                 </div>
                 <div className="form-group">
                     <input type="submit" className="btnSubmit" value="Create Account" />
-                    <div className="to-login"><Link to="/login">Already Have Account?</Link></div>
+                    <div className="to-login"><Link to="/">Already Have Account?</Link></div>
                 </div>
             </form>
 
