@@ -1,6 +1,7 @@
 import React from 'react';
 
-function subscriptions() {
+function subscriptions(props) {
+    console.log("Subscriptions: " + props.category)
     return (
         <div>Subscriptions</div>
     )
