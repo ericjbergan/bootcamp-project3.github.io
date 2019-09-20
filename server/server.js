@@ -1,34 +1,39 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
 const morgan = require('morgan')
-const session = require('express-session')
-const dbConnection = require('./database') 
-const MongoStore = require('connect-mongo')(session)
-const passport = require('./passport');
+// const session = require('express-session')
+// const MongoStore = require('connect-mongo')(session)
+// const passport = require('./passport');
 const app = express()
+const mongoose = require('mongoose')
+
+mongoose.Promise = global.Promise
+
 
 const PORT = process.env.PORT || 5000 
 
-
 // Route requires
-const user = require('./routes/user')
+
 
 // MIDDLEWARE
 app.use(morgan('dev'))
 app.use(
-	bodyParser.urlencoded({
+	express.urlencoded({
 		extended: false
 	})
-)
-app.use(bodyParser.json());
+);
+
+app.use(express.json());
 
 
-
-// DB Config 
-// CONNECT to mongo
-
+// For Deployment
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reactProject";
 
 
+// Connect to the Mongo DB (Local)
+var dbConnection = mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+
+// ==================== Passport ==========================
 // Sessions
 app.use(
 	session({
@@ -43,11 +48,19 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
 
+ 
 
-// Routes
-app.use('/user', user)
+// Use Routes
+const auth = require('./routes/api/user.js');
+const test = require('./routes/api/test.js');
+
+app.use('/user', auth)
+app.use('/test', test)
+
+
+
 
 // Starting Server 
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`)
-})
+});

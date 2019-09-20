@@ -1,13 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../database/models/user')
-const passport = require('../passport')
+const User = require('../../models/user')
+const passport = require('../../passport')
+
 
 router.post('/', (req, res) => {
     console.log('user signup');
 
     const { username, password } = req.body
-    // ADD VALIDATION
+
+
+    // ADD VALIDATION ================================
     User.findOne({ username: username }, (err, user) => {
         if (err) {
             console.log('User.js post error: ', err)
@@ -29,8 +32,10 @@ router.post('/', (req, res) => {
     })
 })
 
+//  AUTHENTICATION ROUTES ====================================
+
 router.post(
-    '/login',
+    '/user',
     function (req, res, next) {
         console.log('routes/user.js, login, req.body: ');
         console.log(req.body)
@@ -64,5 +69,14 @@ router.post('/logout', (req, res) => {
         res.send({ msg: 'no user to log out' })
     }
 })
+
+// ========================================================================
+
+*/
+
+router.get("/", function (req, res){
+    res.send("this is the user")
+});
+
 
 module.exports = router
