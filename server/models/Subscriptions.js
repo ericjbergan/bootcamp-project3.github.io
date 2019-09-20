@@ -25,10 +25,10 @@ var Schema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var subscription = mongoose.model("subscription", Schema);
+var subscriptions = mongoose.model("subscription", Schema);
 
 // Export the Note model
-module.exports = subscription;
+module.exports = subscriptions;
 
 
 

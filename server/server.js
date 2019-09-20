@@ -1,8 +1,9 @@
 const express = require('express');
-const morgan = require('morgan')
-// const session = require('express-session')
-// const MongoStore = require('connect-mongo')(session)
-// const passport = require('./passport');
+const bodyparser = require('body-parser');
+const morgan = require('morgan');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session)
+const passport = require('./passport');
 const app = express()
 const mongoose = require('mongoose')
 
@@ -34,6 +35,8 @@ var dbConnection = mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 // ==================== Passport ==========================
+
+
 // Sessions
 app.use(
 	session({
@@ -52,10 +55,10 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Use Routes
 const auth = require('./routes/api/user.js');
-const test = require('./routes/api/test.js');
+// const test = require('./routes/api/test.js');
 
 app.use('/user', auth)
-app.use('/test', test)
+// app.use('/test', test)
 
 
 
