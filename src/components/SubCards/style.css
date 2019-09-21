@@ -17,19 +17,19 @@
     position: relative;
     width: 325px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-    text-align: left;
+    text-align: center;
   }
   
   .card > .img-container {
     padding-top: 10%;
     margin-bottom: 20px;
-    height: 40%;
+    height: 60%;
     overflow: hidden;
     text-align: center;
-    background:#000;
+    /*background:#000;*/
   }
   .card > .img-container > img {
-    width: 60%
+    width: 70%
   }
   
   .card > .content {

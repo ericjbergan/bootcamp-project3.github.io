@@ -9,10 +9,9 @@ function AddNew(){
             <div className="img-container">
               
                     <img src= "./Images/plus.svg" height="87px"
-    width="100px" alt="pig"/>      
-            
+    width="100px" alt=""/>                
             </div>
-            <h1>Hello</h1>
+            <h2 text-align="center">Add New</h2>  
         </div>
     )
 }

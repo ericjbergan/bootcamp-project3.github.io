@@ -5,6 +5,7 @@ import CreateAccount from './components/CreateAccount/CreateAccount'
 import Login from './components/Login/Login'
 import './App.css';
 import Monthly from "./components/MonthlySubscription/Monthly";
+import CreateSub from "./components/CreateSub/CreateSub";
 
 class App extends Component {
   state = {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path="/create" component={CreateAccount} />
           <Route exact path="/login" component={Login} />
           <Route extct path="/monthly" component={Monthly}/>
+          <Route exact path="/addnew" component={CreateSub}/>
         </Switch>
       </div>
     </Router>
