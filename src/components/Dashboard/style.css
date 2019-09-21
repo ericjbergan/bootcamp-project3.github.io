@@ -4,4 +4,8 @@
   height: 300px;
   border: 1px grey solid;
 }
+
+.main .dash-subs {
+  overflow-y: scroll;
+}
 /*# sourceMappingURL=style.css.map */

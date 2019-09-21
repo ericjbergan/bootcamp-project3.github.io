@@ -15,7 +15,7 @@ class App extends Component {
     loggedIn: false,
     date: "",
     amount: "",
-    category: "groceries",
+    category: "",
     store: "",
     tableData: {
       groceries: "87.50",
@@ -89,7 +89,18 @@ class App extends Component {
                 <Route exact path="/subscriptions" component={Login} />
               </div> :
               <div>
-                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/" render={(props) =>
+                  <Dashboard
+                    date={this.state.date}
+                    amount={this.state.amount}
+                    category={this.state.category}
+                    store={this.state.store}
+                    tableData={this.state.tableData}
+                    subscriptions={this.state.subscriptions}
+                    onChange={this.handleInputChange}
+                    onClick={this.handleExpenseEntry}
+                  />} />
+
                 <Route exact path="/create" component={CreateAccount} />
                 <Route exact path="/dashboard" render={(props) =>
                   <Dashboard
