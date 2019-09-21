@@ -12,6 +12,7 @@ import Subscriptions from './components/Subscriptions/Subscriptions'
 import './App.css';
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -29,6 +30,7 @@ class App extends Component {
         eatingOut: "56.00",
         misc: "135.00",
         subscriptions: "217.00"
+
       },
       subscriptions: [
         {
@@ -116,7 +118,6 @@ class App extends Component {
             <p>Hello, {this.state.username}!</p>
           }
 
-
           {!this.state.loggedIn ?
             <div>
 
@@ -139,6 +140,7 @@ class App extends Component {
             <div>
               <Switch >
                 <Route exact path="/" component={Dashboard} />
+
                 <Route exact path="/create" component={CreateAccount} />
                 <Route exact path="/dashboard" render={(props) =>
                   <Dashboard

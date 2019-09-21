@@ -9,7 +9,7 @@ function expenseEntry(props) {
                 <div>
                     <div className="line1">
                         <p>Date:</p>
-                        <input type="date" size="50" name="date" onChange={props.onChange} value={props.date}/>
+                        <input type="date" size="50" name="date" onChange={props.onChange} value={props.date} />
                     </div>
                     <div className="line1">
                         <p>Amount:</p>
@@ -19,17 +19,16 @@ function expenseEntry(props) {
                         </div>
                     </div>
                     <div className="line1">
-                        <p>Category: </p><input type="text" size="50" name="category" onChange={props.onChange} value={props.category}/>
+                        <p>Category: </p><input type="text" size="50" name="category" onChange={props.onChange} value={props.category} />
                     </div>
                     <div className="line1">
-                        <p>Store: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store}/>
+                        <p>Store: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store} />
                     </div>
                 </div>
                 <div>
                     <p className="submitExpense"><input type="submit" onClick={props.onClick} /></p>
                 </div>
             </form>
-
         </div >
 
     )
