@@ -16,9 +16,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: "",
-      loggedIn: false,
+
       username: null,
+      password: "",
+      loggedIn: true,
       date: "",
       amount: "",
       category: "groceries",
@@ -29,7 +30,6 @@ class App extends Component {
         eatingOut: "56.00",
         misc: "135.00",
         subscriptions: "217.00"
-
       },
       subscriptions: [
         {
