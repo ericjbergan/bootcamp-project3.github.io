@@ -10,6 +10,8 @@ import Dashboard from './components/Dashboard/Dashboard'
 import ExpenseEntry from './components/ExpenseEntry/ExpenseEntry'
 import Subscriptions from './components/Subscriptions/Subscriptions'
 import './App.css';
+import Monthly from "./components/MonthlySubscription/Monthly";
+import CreateSub from "./components/CreateSub/CreateSub";
 
 class App extends Component {
 
@@ -108,6 +110,7 @@ class App extends Component {
     return (
       <div className="container">
         <Router>
+
           
           <div className="jumbotron">
             <h1>Put catchy name here</h1>
@@ -168,10 +171,13 @@ class App extends Component {
                     onChange={this.handleInputChange}
                     onClick={this.handleSubscriptionEntry}
                   />} />
+                 <Route extct path="/monthly" component={Monthly}/>
+                 <Route exact path="/addnew" component={CreateSub}/>
           </Switch>
 
               </div>}
         </Router>
+
       </div>
     );
   }
