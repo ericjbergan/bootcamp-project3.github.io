@@ -30,5 +30,5 @@ var Schema = new Schema({
 var subscriptions = mongoose.model("subscription", Schema);
 
 // Export the Note model
-module.exports = subscriptions;
+module.exports = subscription;
 

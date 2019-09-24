@@ -21,7 +21,16 @@ var expenseSchema = new Schema({
     type: String,
     required: true
   },
-  
+
   date: { type: Date, default: Date.now }
 
 });
+
+
+// This creates our model from the above schema, using mongoose's model method
+var subscriptions = mongoose.model("expenses", Schema);
+
+
+
+// Export the Note model
+module.exports = expenses;
