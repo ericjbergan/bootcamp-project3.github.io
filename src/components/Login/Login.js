@@ -15,7 +15,6 @@ function Login(props) {
                 value={props.password} onChange={props.onChange} />
             </div>
             <div className="form-group">
-                {}
                 <input type="submit" className="btnSubmit" value="Login" onClick={props.changeLoggedIn} />
             </div>
             <div className="form-group">
