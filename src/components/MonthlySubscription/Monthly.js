@@ -27,7 +27,7 @@ function Monthly(props) {
             <a href="https://www.netflix.com/youraccount"  > 
             < SubCard/>
             </a>
-            <a href= "/createsub" > 
+            <a href= "/addnew" > 
             < AddNew />
             </a>
             

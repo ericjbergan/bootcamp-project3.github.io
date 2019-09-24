@@ -8,10 +8,41 @@ import Monthly from "./components/MonthlySubscription/Monthly";
 import CreateSub from "./components/CreateSub/CreateSub";
 
 class App extends Component {
-  state = {
-    username: "",
-    password: ""
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     username: "",
+  //     password: "",
+  //     loggedIn: false,
+  //     username: null,
+  //     date: "",
+  //     amount: "",
+  //     category: "groceries",
+  //     store: "",
+  //     tableData: {
+  //       groceries: "87.50",
+  //       gas: "53.15",
+  //       eatingOut: "56.00",
+  //       misc: "135.00",
+  //       subscriptions: "217.00"
+
+  //     },
+  //     subscriptions: [
+  //       {
+  //         name: "Netflix",
+  //         cost: "12.00 " + this.renews,
+  //         renews: "monthly",
+  //         date: "10/15/19"
+  //       },
+  //       {
+  //         name: ""
+  //       }
+  //     ]
+  //   }
+  //   this.getUser = this.getUser.bind(this)
+  //   this.componentDidMount = this.componentDidMount.bind(this)
+  //   this.updateUser = this.updateUser.bind(this)
+  // }
   
   render() {
     return (
