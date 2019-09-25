@@ -3,5 +3,10 @@
   width: 30%;
   height: 300px;
   border: 1px grey solid;
+  margin: 1.5%;
+}
+
+.main .dash-subs {
+  overflow-y: scroll;
 }
 /*# sourceMappingURL=style.css.map */

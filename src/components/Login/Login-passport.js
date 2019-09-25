@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+import './style.css';
 
 class LoginForm extends Component {
     constructor() {
@@ -10,18 +11,16 @@ class LoginForm extends Component {
             password: '',
             redirectTo: null
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
   
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault()
         console.log('handleSubmit')
 
@@ -56,7 +55,7 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
+                <div className="login">
                     <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
@@ -90,11 +89,7 @@ class LoginForm extends Component {
                         </div>
                         <div className="form-group ">
                             <div className="col-7"></div>
-                            <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
+                            <input type="submit" className="btnSubmit" value="Login" onClick={this.handleSubmit} />
                         </div>
                     </form>
                 </div>

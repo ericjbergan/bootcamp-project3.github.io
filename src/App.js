@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
 
-import Navbar from '../src/components/Navbar/Navbar-passport'
+import NavbarPass from '../src/components/Navbar/Navbar-passport'
+import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
@@ -10,14 +11,16 @@ import Dashboard from './components/Dashboard/Dashboard'
 import ExpenseEntry from './components/ExpenseEntry/ExpenseEntry'
 import Subscriptions from './components/Subscriptions/Subscriptions'
 import './App.css';
+import CreateSub from "./components/CreateSub/CreateSub";
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
-      username: "",
-      loggedIn: false,
       username: null,
+      password: "",
+      loggedIn: true,
       date: "",
       amount: "",
       category: "groceries",
@@ -41,21 +44,20 @@ class App extends Component {
         }
       ]
     }
-    this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateUser = this.updateUser.bind(this)
   }
 
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.getUser()
   }
 
-  updateUser(userObject) {
+  updateUser = (userObject) => {
+    console.log("loggedIn " + this.state.loggedIn)
     this.setState(userObject)
+    console.log("loggedIn " + this.state.loggedIn)
   }
 
-  getUser() {
+  getUser = () => {
     axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
@@ -93,28 +95,27 @@ class App extends Component {
   }
 
   changeLoggedIn = () => {
-    // this.setState({ loggedIn: true });
-    // console.log("logged in");
-  };
-
-  logout = () => {
-    this.setState({ loggedIn: false });
-    console.log("logged out");
+    this.setState({ loggedIn: true });
+    console.log("logged in");
   };
 
   render() {
     return (
       <div className="container">
         <Router>
-          
+
+
           <div className="jumbotron">
             <h1>Put catchy name here</h1>
           </div>
-          <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+          {this.state.loggedIn ?
+            <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+            :
+            <NavbarPass updateUser={this.updateUser} loggedIn={this.state.loggedIn} />}
+
           {this.state.loggedIn &&
             <p>Hello, {this.state.username}!</p>
           }
-
 
           {!this.state.loggedIn ?
             <div>
@@ -136,6 +137,7 @@ class App extends Component {
 
             </div> :
             <div>
+
               <Switch >
                 <Route exact path="/" component={Dashboard} />
                 <Route exact path="/create" component={CreateAccount} />
@@ -166,10 +168,12 @@ class App extends Component {
                     onChange={this.handleInputChange}
                     onClick={this.handleSubscriptionEntry}
                   />} />
-          </Switch>
+                <Route exact path="/addnew" component={CreateSub} />
+              </Switch>
 
-              </div>}
+            </div>}
         </Router>
+
       </div>
     );
   }

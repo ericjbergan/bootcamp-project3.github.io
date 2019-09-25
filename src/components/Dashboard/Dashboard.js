@@ -8,7 +8,7 @@ function dashboard(props) {
     console.log("Dashboard " + props.category);
     return (
         <div className="container main">
-            <div className="dashEntry boxes">
+            <div className="dash-entry boxes">
                 <DashEntry
                     date={props.date}
                     amount={props.amount}
@@ -18,12 +18,12 @@ function dashboard(props) {
                     onClick={props.onClick}
                 />
             </div>
-            <div className="dashTable boxes">
+            <div className="dash-table boxes">
                 <DashTable 
                     table={props.tableData}
                 />
             </div>
-            <div className="dashSubs boxes">
+            <div className="dash-subs boxes">
                 <DashSubs
                     subscriptions={props.subscriptions}
                     onChange={props.handleInputChange}

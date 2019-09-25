@@ -1,14 +1,19 @@
 import React from 'react';
-import './style.css';
+import Wrapper from '../SubCards/Wrapper';
+import './style.css'
 
-function expenseEntry(props) {
-    console.log("ExpenseEntry: " + props.category);
+function CreateSub(props) {
     return (
-        <div className="container">
+        <Wrapper>
+            <div className="container">
             <form>
                 <div>
+                <div className="line1">
+                        <p>Subscription Name: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store} />
+                    </div>
+
                     <div className="line1">
-                        <p>Date:</p>
+                        <p>Renewal Date:</p>
                         <input type="date" size="50" name="date" onChange={props.onChange} value={props.date} />
                     </div>
                     <div className="line1">
@@ -16,22 +21,27 @@ function expenseEntry(props) {
                         <div className="input-group-prepend">
                             <span className="input-group-text">$</span>
                             <input type="number" name="amount" onChange={props.onChange} value={props.amount}></input>
+                        <div className="line2">
+                        <form action="">
+                        <select name="">
+                            <option value="monthly">Monthly</option>
+                            <option value="annualy">Annualy</option>
+                        </select>
+                        </form>
+                        </div>
                         </div>
                     </div>
-                    <div className="line1">
-                        <p>Category: </p><input type="text" size="50" name="category" onChange={props.onChange} value={props.category} />
-                    </div>
-                    <div className="line1">
-                        <p>Store: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store} />
-                    </div>
+
                 </div>
                 <div>
                     <p className="submitExpense"><input type="submit" onClick={props.onClick} /></p>
                 </div>
             </form>
         </div >
-
+    </Wrapper>
+      
     )
 }
 
-export default expenseEntry;
+export default CreateSub;
+

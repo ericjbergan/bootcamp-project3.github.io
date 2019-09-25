@@ -1,4 +1,5 @@
 module.exports = {
-  exprenses: require("./expenses")
+
+  expenses: require("./expenses"),
   subscription: require("./subscription")
 };
