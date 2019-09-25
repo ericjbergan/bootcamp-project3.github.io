@@ -32,37 +32,45 @@ const subscription = [
             "name": "netflix",
             "renewal date": "",
             "amount": "",
-            "image": "netflix"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+            "url": "https://www.netflix.com/Login?nextpage=https%3A%2F%2Fwww.netflix.com%2FYourAccount"
             },
        {
             "name": "hulu",
             "renewal date": "",
             "amount": "",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hulu_Logo.svg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hulu_Logo.svg",
+            "url": "https://auth.hulu.com/web/login"
             },
        {
             "name": "amazon prime ",
             "renewal date": "",
             "amount": "",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Amazon_Prime_Logo.svg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Amazon_Prime_Logo.svg",
+            "url": "https://www.amazon.com/your-account"
             },
       {
             "name": "hbo now",
             "renewal date": "",
             "amount": "",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/HBONOW-logo.svg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/HBONOW-logo.svg",
+            "url":"https://play.hbonow.com/page/urn:hbo:page:home"
             },
         {
             "name": "sling tv",
             "renewal date": "",
             "amount": "",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sling_TV_logo.svg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sling_TV_logo.svg",
+            "url": "https://oauth-client.p.sling.com/?redirect_uri=https://www.sling.com/authentication_callback&client_id=ott_server&state=eqfk0"
+
             },
        {
             "name": "disney +",
             "renewal date": "",
             "amount": "",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg",
+            "url": "https://preview.disneyplus.com"
+
             },
         
     
