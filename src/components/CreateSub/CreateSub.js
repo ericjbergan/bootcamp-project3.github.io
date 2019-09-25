@@ -1,16 +1,21 @@
 import React from 'react';
 import Wrapper from '../SubCards/Wrapper';
 import './style.css'
+import SearchBar from "../SearchBar/SearchBar"
 
 function CreateSub(props) {
     return (
-        <Wrapper>
+        <div>
+
+            <SearchBar/>
             <div className="container">
+
                 <form>
                     <div>
                         <div className="line1">
                             <p>Subscription Name: </p><input type="text" size="50" name="name" 
                             onChange={props.onChange} value={props.name} />
+
                         </div>
                         <div className="line1">
                             <p>Subscription URL: </p><input type="text" size="50" name="subURL" 
@@ -41,7 +46,6 @@ function CreateSub(props) {
                 </form>
             </div >
         </Wrapper>
-
     )
 }
 
