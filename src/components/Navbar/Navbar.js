@@ -36,10 +36,10 @@ class Navbar extends Component {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/expenseEntry"
-                            className={window.location.pathname === "/expenseEntry" ? "nav-link active" : "nav-link"}
+                        <Link to="/addnew"
+                            className={window.location.pathname === "/addnew" ? "nav-link active" : "nav-link"}
                         >
-                            Expense Entry
+                            Subscription Entry
                         </Link>
                     </li>
                     <li className="nav-item">
