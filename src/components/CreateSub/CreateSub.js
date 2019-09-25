@@ -12,7 +12,7 @@ function CreateSub(props) {
             <form>
                 <div>
                 <div className="line1">
-                        {/* <p>Subscription Name: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store} /> */}
+                        <p>Subscription Url: </p><input type="text" size="50" name="store" onChange={props.onChange} value={props.store} />
                     </div>
                     <div className="line1">
 
