@@ -16,19 +16,17 @@ const userSchema = new Schema({
   },
 
 
-expenses: [
+subscriptions: [
     {
       // Store ObjectIds in the array
       type: Schema.Types.ObjectId,
       // The ObjectIds will refer to the ids in the Note model
-      ref: "expenses"
+      ref: "subscriptions"
     }
   ]
 
 
 });
-
-
 
 
 // Define schema methods
