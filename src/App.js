@@ -8,7 +8,6 @@ import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
 import Dashboard from './components/Dashboard/Dashboard'
-import ExpenseEntry from './components/ExpenseEntry/ExpenseEntry'
 import Subscriptions from './components/Subscriptions/Subscriptions'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
@@ -22,34 +21,18 @@ class App extends Component {
       username: null,
       password: "",
       loggedIn: true,
+      name: "",
       date: "",
       amount: "",
-      category: "groceries",
-      store: "",
-      tableData: {
-        groceries: "87.50",
-        gas: "53.15",
-        eatingOut: "56.00",
-        misc: "135.00",
-        subscriptions: "217.00"
-      },
-      subscriptions: [
-        {
-          name: "Netflix",
-          cost: "12.00 " + this.renews,
-          renews: "monthly",
-          date: "10/15/19"
-        },
-        {
-          name: ""
-        }
-      ]
+      subURL: "",
+      subscriptions: []
     }
   }
 
 
   componentDidMount = () => {
-    this.getUser()
+    this.getUser();
+    this.loadSubs();
   }
 
   updateUser = (userObject) => {
@@ -79,26 +62,25 @@ class App extends Component {
     })
   }
 
+  loadSubs = () => {
+
+  }
+
   handleInputChange = (event) => {
-    // console.log(event.target);
     const { name, value } = event.target;
     this.setState({ [name]: value })
   }
 
-  handleExpenseEntry = () => {
-    console.log("handleExpenseEntry")
-    // build json from 'this.state' expense data and run app.create for expenses
-  }
-
   handleSubscriptionEntry = () => {
     console.log("handleSubscriptionEntry")
-    // build json from 'this.state' subscription data and run app.create for subscriptions
+    const newSub = {
+      name: this.state.name,
+      amount: this.state.amount,
+      subURL: this.state.subURL,
+      date: this.state.date
+    }
+    console.log(newSub);
   }
-
-  changeLoggedIn = () => {
-    this.setState({ loggedIn: true });
-    console.log("logged in");
-  };
 
   render() {
     return (
@@ -112,7 +94,7 @@ class App extends Component {
 
 
           <div className="jumbotron">
-            <h1>Put catchy name here</h1>
+            <h1>Subscription Perscription</h1>
           </div>
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -158,23 +140,21 @@ class App extends Component {
                     onChange={this.handleInputChange}
                     onClick={this.handleExpenseEntry}
                   />} />
-                <Route exact path="/expenseEntry" render={(props) =>
-                  <ExpenseEntry
-                    date={this.state.date}
-                    amount={this.state.amount}
-                    category={this.state.category}
-                    store={this.state.store}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleExpenseEntry}
-                  />} />
                 <Route exact path="/subscriptions" render={(props) =>
                   <Subscriptions
                     category={this.state.category}
                     subscriptions={this.state.subscriptions}
                     onChange={this.handleInputChange}
-                    onClick={this.handleSubscriptionEntry}
-                  />} />
-                <Route exact path="/addnew" component={CreateSub} />
+                    />} />
+                <Route exact path="/addnew" render={(props) =>
+                <CreateSub
+                name={this.state.name}
+                date={this.state.date}
+                amount={this.state.amount}
+                subURl={this.state.subURL}
+                onChange={this.handleInputChange}
+                onClick={this.handleSubscriptionEntry}
+                 />} />
               </Switch>
 
             </div>}
