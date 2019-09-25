@@ -18,10 +18,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
       username: null,
       password: "",
-      loggedIn: true,
+      loggedIn: false,
       date: "",
       amount: "",
       category: "groceries",
