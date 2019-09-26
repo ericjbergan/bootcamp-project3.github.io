@@ -26,20 +26,10 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <ul className="navbar-nav page-links">
                     <li className="nav-item">
-                        <Link to="/"
-                            className={
-                                window.location.pathname === "/" || window.location.pathname === "/dashboard"
-                                    ? "nav-link active" : "nav-link"
-                            }
-                        >
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="nav-item">
                         <Link to="/addnew"
                             className={window.location.pathname === "/addnew" ? "nav-link active" : "nav-link"}
                         >
-                            Subscription Entry
+                            New Subscription
                         </Link>
                     </li>
                     <li className="nav-item">
