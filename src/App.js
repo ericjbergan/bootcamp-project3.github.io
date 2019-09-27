@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
-
+import API from './utilities/API'
 import NavbarPass from '../src/components/Navbar/Navbar-passport'
 import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
 import Dashboard from './components/Dashboard/Dashboard'
-import ExpenseEntry from './components/ExpenseEntry/ExpenseEntry'
-import Subscriptions from './components/Subscriptions/Subscriptions'
+import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
+import { Helmet } from "react-helmet";
 
 class App extends Component {
 
@@ -20,35 +20,19 @@ class App extends Component {
     this.state = {
       username: null,
       password: "",
-      loggedIn: false,
+      loggedIn: true,
+      name: "",
       date: "",
       amount: "",
-      category: "groceries",
-      store: "",
-      tableData: {
-        groceries: "87.50",
-        gas: "53.15",
-        eatingOut: "56.00",
-        misc: "135.00",
-        subscriptions: "217.00"
-      },
-      subscriptions: [
-        {
-          name: "Netflix",
-          cost: "12.00 " + this.renews,
-          renews: "monthly",
-          date: "10/15/19"
-        },
-        {
-          name: ""
-        }
-      ]
+      subURL: "",
+      subscriptions: []
     }
   }
 
 
   componentDidMount = () => {
-    this.getUser()
+    this.getUser();
+    this.loadSubs();
   }
 
   updateUser = (userObject) => {
@@ -78,36 +62,37 @@ class App extends Component {
     })
   }
 
+  loadSubs = () => {
+    API.getSubscriptions()
+    .then(res =>
+      this.setState({ subscriptions: res.data, name: "", date: "", amount: "", subURL: "" })
+    )
+    .catch(err => console.log(err));
+  }
+
   handleInputChange = (event) => {
-    // console.log(event.target);
     const { name, value } = event.target;
     this.setState({ [name]: value })
   }
 
-  handleExpenseEntry = () => {
-    console.log("handleExpenseEntry")
-    // build json from 'this.state' expense data and run app.create for expenses
-  }
-
   handleSubscriptionEntry = () => {
     console.log("handleSubscriptionEntry")
-    // build json from 'this.state' subscription data and run app.create for subscriptions
+    API.saveSubscription({
+      name: this.state.name,
+      amount: this.state.amount,
+      subURL: this.state.subURL,
+      date: this.state.date
+    })
+      .then(res => this.loadSubs())
+      .catch(err => console.log(err));
   }
-
-  changeLoggedIn = () => {
-    this.setState({ loggedIn: true });
-    console.log("logged in");
-  };
 
   render() {
     return (
+
       <div className="container">
+
         <Router>
-
-
-          <div className="jumbotron">
-            <h1>Put catchy name here</h1>
-          </div>
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :
@@ -139,36 +124,22 @@ class App extends Component {
             <div>
 
               <Switch >
-                <Route exact path="/" component={Dashboard} />
                 <Route exact path="/create" component={CreateAccount} />
-                <Route exact path="/dashboard" render={(props) =>
-                  <Dashboard
-                    date={this.state.date}
-                    amount={this.state.amount}
-                    category={this.state.category}
-                    store={this.state.store}
-                    tableData={this.state.tableData}
-                    subscriptions={this.state.subscriptions}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleExpenseEntry}
-                  />} />
-                <Route exact path="/expenseEntry" render={(props) =>
-                  <ExpenseEntry
-                    date={this.state.date}
-                    amount={this.state.amount}
-                    category={this.state.category}
-                    store={this.state.store}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleExpenseEntry}
-                  />} />
                 <Route exact path="/subscriptions" render={(props) =>
-                  <Subscriptions
+                  <Monthly
                     category={this.state.category}
                     subscriptions={this.state.subscriptions}
+                    onChange={this.handleInputChange}
+                  />} />
+                <Route exact path="/addnew" render={(props) =>
+                  <CreateSub
+                    name={this.state.name}
+                    date={this.state.date}
+                    amount={this.state.amount}
+                    subURl={this.state.subURL}
                     onChange={this.handleInputChange}
                     onClick={this.handleSubscriptionEntry}
                   />} />
-                <Route exact path="/addnew" component={CreateSub} />
               </Switch>
 
             </div>}

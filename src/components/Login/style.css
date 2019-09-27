@@ -1,12 +1,37 @@
-.login {
-  width: 50%;
-  margin: auto;
-  border: 2px solid lightblue;
-  border-radius: 5px;
-  padding: 10px;
+h4 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.to-login {
-  float: right;
+.login-form {
+  margin: auto;
+  border: 1px solid grey;
+  width: 30%;
+}
+
+.login-form .login-fields {
+  text-align: center;
+  margin: 20px;
+}
+
+.login-form ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.login-form :-ms-input-placeholder {
+  text-align: center;
+}
+
+.login-form ::-ms-input-placeholder {
+  text-align: center;
+}
+
+.login-form ::placeholder {
+  text-align: center;
+}
+
+.login-form .login-btn {
+  text-align: center;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */

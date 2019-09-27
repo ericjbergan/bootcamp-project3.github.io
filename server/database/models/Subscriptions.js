@@ -1,33 +1,37 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new NoteSchema object
 // This is similar to a Sequelize model
-var Schema = new Schema({
+const subscriptionSchema = new Schema({
   // `title` must be of type String
-  type:{
+  name: {
     type: String,
     required: true
   },
 
-   category:{
+  subURL: {
     type: String,
+    required: false
+  },
+
+  amount: {
+    type: Number,
     required: true
   },
 
-    store:{
-    type: String,
-    required: true
-  },
-
-   date: { type: Date, default: Date.now }
+  date: { 
+    type: Date, 
+    default: Date.now,
+    required: false
+  }
 
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var subscriptions = mongoose.model("subscription", Schema);
+const subscriptions = mongoose.model("subscription", subscriptionSchema);
 
 // Export the Note model
 module.exports = subscriptions;
