@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css'
 import DashEntry from './DashEntry/DashEntry'
-import DashTable from './DashTable/DashTable'
 import DashSubs from './DashSubs/DashSubs'
 
 function dashboard(props) {
@@ -16,11 +15,6 @@ function dashboard(props) {
                     store={props.store}
                     onChange={props.handleInputChange}
                     onClick={props.onClick}
-                />
-            </div>
-            <div className="dash-table boxes">
-                <DashTable 
-                    table={props.tableData}
                 />
             </div>
             <div className="dash-subs boxes">

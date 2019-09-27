@@ -83,19 +83,21 @@ class App extends Component {
   }
 
   render() {
+    let links = [
+      {label: 'Dashboard', link: '#Dashboard', active: false},
+      {label: 'Subscription', link: '#Subscription', active: false},
+      {label: 'Subscription Entry', link: '$SubscriptionEntry', active: false}
+
+    ]
     return (
-      
-
-
  
       <div className="container">
+      
     
         <Router>
 
 
-          <div className="jumbotron">
-            <h1>Subscription Perscription</h1>
-          </div>
+  
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :

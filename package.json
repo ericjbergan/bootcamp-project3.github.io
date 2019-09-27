@@ -23,6 +23,7 @@
     "react-router-dom": "^5.0.1",
     "react-router-with-props": "^1.0.0",
     "react-scripts": "3.1.1",
+    "sass": "^1.22.12",
     "spectre.css": "^0.5.0"
   },
   "scripts": {
