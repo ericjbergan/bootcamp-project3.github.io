@@ -119,7 +119,7 @@ class App extends Component {
 
           
           <div className="jumbotron">
-            <h1>Put catchy name here</h1>
+            <h1>Money Minder</h1>
           </div>
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
           {this.state.loggedIn &&

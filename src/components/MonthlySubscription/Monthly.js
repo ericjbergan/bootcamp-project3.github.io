@@ -1,8 +1,12 @@
 import React from 'react';
-/*import './style.css';*/
+import './style.css';
 import  SubCard  from "../SubCards/Netflix";
 import Wrapper from '../SubCards/Wrapper';
-import AddNew from "../SubCards/AddNew"
+import AddNew from "../SubCards/AddNew";
+// import { wrap } from 'module';
+
+
+
 function Monthly(props) {
     return (
         <div>
@@ -20,15 +24,23 @@ function Monthly(props) {
       
         <div className="content-container">
             <Wrapper>
-            <a href="https://www.netflix.com/youraccount"  > 
+
+           
+
             < SubCard />
-            </a>
-            <a href="https://www.netflix.com/youraccount"  > 
+            {/* < SubCard />
             < SubCard />
-            </a>
+            < SubCard />
+            < SubCard />
+            < SubCard /> */}
+           
+           
+            </Wrapper>
+            <Wrapper>
             <a href= "/addnew" > 
             < AddNew />
             </a>
+            
             
            
             

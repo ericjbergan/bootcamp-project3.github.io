@@ -3,10 +3,11 @@
     background: #ECEFF1;
     height: 100%;
     display: flex;
-    /*flex-flow: row wrap;*/
+    flex-flow: row wrap;
     padding: 20px;
     align-content: flex-start;
     overflow: auto;
+    
   }
   
   .card {
@@ -19,6 +20,7 @@
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: center;
     text-decoration: none;
+    flex-direction: corolumn;
   }
   
   .card > .img-container {
@@ -30,7 +32,7 @@
     /*background:#000;*/
   }
   .card > .img-container > img {
-    width: 40%;
+    width: 30%;
   }
   
   .card > .content {
@@ -45,18 +47,4 @@
   
   .card > .content > ul > li {
     margin-top: 18px;
-  }
-
-  .edit_remove{
-    padding: 20px 20px;
-  }
-  .edit{
-    text-align: left;
-    float: left;
-    
-  }
-  .remove{
-    text-align: right;
-    float: right;
-
   }
