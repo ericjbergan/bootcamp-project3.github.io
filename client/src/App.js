@@ -10,7 +10,6 @@ import LoginForm from './components/Login/Login-passport'
 import Subscriptions from './components/MonthlySubscription/Subscriptions'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
-import { Helmet } from "react-helmet";
 
 class App extends Component {
 

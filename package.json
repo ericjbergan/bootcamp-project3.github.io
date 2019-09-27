@@ -1,7 +1,6 @@
 {
   "name": "bootcamp-project3.github.io",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
@@ -27,6 +26,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.6.1",
+    "cross-env": "^6.0.0",
     "nodemon": "^1.17.5"
   },
   "eslintConfig": {
