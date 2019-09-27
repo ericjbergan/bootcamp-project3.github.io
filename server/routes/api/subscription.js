@@ -13,4 +13,10 @@ router
   .put(subscriptionsController.update)
   .delete(subscriptionsController.remove);
 
+  router
+  .route("/user/:id")
+  .get(subscriptionsController.findByusername);
+ 
+
+
 module.exports = router;
