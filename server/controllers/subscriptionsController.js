@@ -12,6 +12,11 @@ module.exports = {
       .then(dbSubscription => res.json(dbSubscription))
       .catch(err => res.status(422).json(err));
   },
+  findByusername: function(req, res) {
+    db.Subscription.find({username:req.params.id})
+      .then(dbSubscription => res.json(dbSubscription))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Subscription.create(req.body)
       .then(dbSubscription => res.json(dbSubscription))
