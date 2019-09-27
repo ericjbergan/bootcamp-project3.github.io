@@ -1,7 +1,7 @@
 import React from 'react';
-import AutosuggestHighlightMatch from "../../../node_modules/autosuggest-highlight/match";
-import AutosuggestHighlightParse from '../../../node_modules/autosuggest-highlight/parse';
-import Autosuggest from '../../../node_modules/react-autosuggest';
+import AutosuggestHighlightMatch from "autosuggest-highlight/match";
+import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
+import Autosuggest from 'react-autosuggest';
 import './style.css'
 const subscription = [
     {

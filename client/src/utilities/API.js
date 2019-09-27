@@ -11,6 +11,7 @@ export default {
   },
   // Saves a subscription to the database
   saveSubscription: function(subscriptionData) {
+      console.log("saveSub");
     return axios.post("/api/subscriptions", subscriptionData);
   },
   // Updates the subscription with the given id

@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
 import API from './utilities/API'
-import NavbarPass from '../src/components/Navbar/Navbar-passport'
-import Navbar from '../src/components/Navbar/Navbar'
+import NavbarPass from './components/Navbar/Navbar-passport'
+import Navbar from './components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
-import Dashboard from './components/Dashboard/Dashboard'
-import Monthly from './components/MonthlySubscription/Monthly'
+import Subscriptions from './components/MonthlySubscription/Subscriptions'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
 import { Helmet } from "react-helmet";
@@ -75,7 +74,8 @@ class App extends Component {
     this.setState({ [name]: value })
   }
 
-  handleSubscriptionEntry = () => {
+  handleSubscriptionEntry = (event) => {
+    event.preventDefault();
     console.log("handleSubscriptionEntry")
     API.saveSubscription({
       name: this.state.name,
@@ -128,10 +128,10 @@ class App extends Component {
             <div>
 
               <Switch >
-                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/" component={Subscriptions} />
                 <Route exact path="/create" component={CreateAccount} />
                 <Route exact path="/subscriptions" render={(props) =>
-                  <Monthly
+                  <Subscriptions
                     category={this.state.category}
                     subscriptions={this.state.subscriptions}
                     onChange={this.handleInputChange}
