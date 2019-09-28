@@ -20,15 +20,10 @@ function Monthly(props) {
       
         <div className="content-container">
             <Wrapper>
-            <a href="https://www.netflix.com/youraccount"  > 
+            
             < SubCard />
-            </a>
-            <a href="https://www.netflix.com/youraccount"  > 
-            < SubCard />
-            </a>
-            <a href= "/addnew" > 
-            < AddNew />
-            </a>
+            
+
             
            
             
