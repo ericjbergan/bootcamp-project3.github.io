@@ -1,48 +1,35 @@
 {
   "name": "bootcamp-project3.github.io",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
-    "autosuggest-highlight": "^3.1.1",
-    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.1",
+    "cors": "^2.8.5",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "gh-pages": "^2.1.1",
+    "if-env": "^1.0.4",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "react": "^16.9.0",
-    "react-autosuggest": "^9.4.3",
-    "react-dom": "^16.9.0",
-    "react-fontawesome": "^1.6.1",
-    "react-helmet": "^5.2.1",
-    "react-router-dom": "^5.0.1",
-    "react-router-with-props": "^1.0.0",
-    "react-scripts": "3.1.1",
-    "sass": "^1.22.12",
-    "spectre.css": "^0.5.0"
+    "passport-local": "^1.0.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1",
-    "node-sass": "^4.12.0",
-    "nodemon": "^1.17.5",
-    "sass-loader": "^8.0.0",
-    "webpack": "^4.41.0"
+    "concurrently": "^3.6.1",
+    "cross-env": "^6.0.0",
+    "nodemon": "^1.17.5"
   },
-  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -58,17 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ericjbergan.github.io/bootcamp-project3.github.io",
-  "description": "Pages:     Create login - allows new user to choose username and password     Login - allows user to enter username and password and continue to homepage     Homepage - 'App.js'; switch page for other pages",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ericjbergan/bootcamp-project3.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ericjbergan/bootcamp-project3.github.io/issues"
-  }
+  "homepage": "https://ericjbergan.github.io/bootcamp-project3.github.io"
 }

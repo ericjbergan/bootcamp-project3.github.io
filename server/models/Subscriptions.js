@@ -13,21 +13,30 @@ var Schema = mongoose.Schema;
 // }
 var Schema = new Schema({
   // `title` must be of type String
-  amount:{
+  name: {
     type: String,
+    required: false
+  },
+
+  subURL: {
+    type: String,
+    required: false
+  },
+
+  amount: {
+    type: Number,
     required: true
   },
 
-   category:{
-    type: String,
-    required: true
+  date: { 
+    type: Date, 
+    default: Date.now,
+    required: false
   },
-
-    store:{
-    type: String,
-    required: true
+  
+  username: {
+    type: String
   }
-
 });
 
 // This creates our model from the above schema, using mongoose's model method

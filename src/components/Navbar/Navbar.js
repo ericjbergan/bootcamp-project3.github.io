@@ -25,7 +25,7 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
-                    Subscription&nbsp;<i class="fal fa-prescription"></i>
+                    Subscription&nbsp;<i class="fad fa-prescription"></i>
                 </a>
                 <button
                     className="navbar-toggler"
@@ -42,24 +42,25 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
                         <il className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
-                                Subscription Entry
-                            </a>
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
+                            Subscription Entry
+                        </a>
                         </il>
                         <il className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
-                                Subscriptions
-                            </a>
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
+                            Subscriptions
+                        </a>
                         </il>
                         <il className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
-                                Log Out
-                            </a>
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
+                            Log Out
+                        </a>
                         </il>
                     </ul>
 
                 </div>
             </nav>
+
         )
     }
 }
