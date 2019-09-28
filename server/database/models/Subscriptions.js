@@ -5,9 +5,21 @@ const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new NoteSchema object
 // This is similar to a Sequelize model
+<<<<<<< HEAD
 const subscriptionSchema = new Schema({
   // `title` must be of type String
   name: {
+=======
+
+// {
+//   "amount":"something",
+//   "category":"some category",
+//   "store":"Some store"
+// }
+var Schema = new Schema({
+  // `title` must be of type String
+  amount:{
+>>>>>>> stelios5
     type: String,
     required: true
   },
@@ -21,6 +33,7 @@ const subscriptionSchema = new Schema({
     type: Number,
     required: true
   },
+<<<<<<< HEAD
 
   date: { 
     type: Date, 
@@ -28,6 +41,11 @@ const subscriptionSchema = new Schema({
     required: false
   }
 
+=======
+ username:{
+   type:String
+ }
+>>>>>>> stelios5
 });
 
 // This creates our model from the above schema, using mongoose's model method
@@ -35,4 +53,7 @@ const subscriptions = mongoose.model("subscription", subscriptionSchema);
 
 // Export the Note model
 module.exports = subscriptions;
+<<<<<<< HEAD
 
+=======
+>>>>>>> stelios5
