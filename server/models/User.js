@@ -7,27 +7,9 @@ mongoose.promise = Promise
 const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false },
+	password: { type: String, unique: false, required: false }
 
-
- userCreated: {
-    type: Date,
-    default: Date.now
-  },
-
-
-subscriptions: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Note model
-      ref: "subscriptions"
-    }
-  ]
-
-
-});
-
+})
 
 // Define schema methods
 userSchema.methods = {
@@ -38,8 +20,6 @@ userSchema.methods = {
 		return bcrypt.hashSync(plainTextPassword, 10)
 	}
 }
-
-
 
 // Define hooks for pre-saving
 userSchema.pre('save', function (next) {
@@ -53,8 +33,6 @@ userSchema.pre('save', function (next) {
 		next()
 	}
 })
-
-
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
