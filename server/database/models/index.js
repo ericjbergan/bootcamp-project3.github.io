@@ -1,5 +1,3 @@
 module.exports = {
-
-  expenses: require("./expenses"),
-  subscription: require("./subscription")
-};
+    Subscription: require("./Subscriptions")
+}
