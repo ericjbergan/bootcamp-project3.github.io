@@ -1,6 +1,11 @@
 body {
     font-family: Helvetica, sans-serif;
   }
+
+  .search-bar {
+    width: 40%;
+    margin-bottom: 30px;
+  }
   
   .react-autosuggest__container {
     position: relative;

@@ -37,7 +37,10 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "nodemon": "^1.17.5"
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.17.5",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.0"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
@@ -55,5 +58,17 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ericjbergan.github.io/bootcamp-project3.github.io"
+  "homepage": "https://ericjbergan.github.io/bootcamp-project3.github.io",
+  "description": "Pages:     Create login - allows new user to choose username and password     Login - allows user to enter username and password and continue to homepage     Homepage - 'App.js'; switch page for other pages",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericjbergan/bootcamp-project3.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericjbergan/bootcamp-project3.github.io/issues"
+  }
 }

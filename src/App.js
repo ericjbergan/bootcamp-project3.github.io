@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
-
+import API from './utilities/API'
 import NavbarPass from '../src/components/Navbar/Navbar-passport'
 import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
 import Dashboard from './components/Dashboard/Dashboard'
-import Subscriptions from './components/Subscriptions/Subscriptions'
+import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 class App extends Component {
 
@@ -63,7 +63,11 @@ class App extends Component {
   }
 
   loadSubs = () => {
-
+    API.getSubscriptions()
+    .then(res =>
+      this.setState({ subscriptions: res.data, name: "", date: "", amount: "", subURL: "" })
+    )
+    .catch(err => console.log(err));
   }
 
   handleInputChange = (event) => {
@@ -73,31 +77,22 @@ class App extends Component {
 
   handleSubscriptionEntry = () => {
     console.log("handleSubscriptionEntry")
-    const newSub = {
+    API.saveSubscription({
       name: this.state.name,
       amount: this.state.amount,
       subURL: this.state.subURL,
       date: this.state.date
-    }
-    console.log(newSub);
+    })
+      .then(res => this.loadSubs())
+      .catch(err => console.log(err));
   }
 
   render() {
-    let links = [
-      {label: 'Dashboard', link: '#Dashboard', active: false},
-      {label: 'Subscription', link: '#Subscription', active: false},
-      {label: 'Subscription Entry', link: '$SubscriptionEntry', active: false}
-
-    ]
     return (
- 
+
       <div className="container">
-      
-    
+
         <Router>
-
-
-  
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :
@@ -129,34 +124,22 @@ class App extends Component {
             <div>
 
               <Switch >
-                <Route exact path="/" component={Dashboard} />
                 <Route exact path="/create" component={CreateAccount} />
-                <Route exact path="/dashboard" render={(props) =>
-                  <Dashboard
+                <Route exact path="/subscriptions" render={(props) =>
+                  <Monthly
+                    category={this.state.category}
+                    subscriptions={this.state.subscriptions}
+                    onChange={this.handleInputChange}
+                  />} />
+                <Route exact path="/addnew" render={(props) =>
+                  <CreateSub
+                    name={this.state.name}
                     date={this.state.date}
                     amount={this.state.amount}
-                    category={this.state.category}
-                    store={this.state.store}
-                    tableData={this.state.tableData}
-                    subscriptions={this.state.subscriptions}
+                    subURl={this.state.subURL}
                     onChange={this.handleInputChange}
-                    onClick={this.handleExpenseEntry}
+                    onClick={this.handleSubscriptionEntry}
                   />} />
-                <Route exact path="/subscriptions" render={(props) =>
-                  <Subscriptions
-                    category={this.state.category}
-                    subscriptions={this.state.subscriptions}
-                    onChange={this.handleInputChange}
-                    />} />
-                <Route exact path="/addnew" render={(props) =>
-                <CreateSub
-                name={this.state.name}
-                date={this.state.date}
-                amount={this.state.amount}
-                subURl={this.state.subURL}
-                onChange={this.handleInputChange}
-                onClick={this.handleSubscriptionEntry}
-                 />} />
               </Switch>
 
             </div>}

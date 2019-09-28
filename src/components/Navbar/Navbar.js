@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './style.css';
 import axios from 'axios'
-import { declareVariable } from '@babel/types';
 
 class Navbar extends Component {
 
@@ -26,7 +25,7 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
-                    Navbar
+                    ubscription&nbsp;<i class="fal fa-prescription"></i>
                 </a>
                 <button
                     className="navbar-toggler"
@@ -42,33 +41,25 @@ class Navbar extends Component {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
-                        <il className="nav-item active">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/Dashboard">
-                            Dashboard
-                        </a>
+                        <il className="nav-item">
+                            <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
+                                Subscription Entry
+                            </a>
                         </il>
                         <il className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
-                            Subscription Entry
-                        </a>
+                            <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
+                                Subscriptions
+                            </a>
                         </il>
                         <il className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
-                            Subscriptions
-                        </a>
-                        </il>
-                        <il className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
-                            Login
-                        </a>
+                            <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
+                                Log Out
+                            </a>
                         </il>
                     </ul>
 
                 </div>
             </nav>
-
-            
-
         )
     }
 }
