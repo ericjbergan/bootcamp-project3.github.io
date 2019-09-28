@@ -77,7 +77,7 @@ class SubCard extends Component {
       </a>
             <p>{sub.amount}/month</p>
             <p>Subcription renews on: {sub.renewal_date}</p>
-            </div>
+      </div>
 
           </div>
         ))}
