@@ -9,7 +9,12 @@ const app = express()
 const PORT = 3001
 // Route requires
 const user = require('./server/routes/user')
+const subscription = require('./server/routes/subscriptions')
 const api = require('./server/routes/api')
+const cors = require('cors')
+
+app.use(cors())
+app.options('/api/subscriptions', cors())
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -37,7 +42,8 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Routes
 app.use('/user', user)
-// app.use('/api', api)
+app.use('/api', subscription)
+
 
 
 // Starting Server 
