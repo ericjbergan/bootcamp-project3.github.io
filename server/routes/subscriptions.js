@@ -11,4 +11,10 @@ router.post(
     }
 )
 
+router.get(
+    '/subscriptions',
+    (req, res) => {
+        subscriptionsController.findByusername(req, res)
+    })
+
 module.exports = router

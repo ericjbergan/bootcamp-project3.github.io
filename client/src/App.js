@@ -18,11 +18,7 @@ class App extends Component {
     this.state = {
       username: null,
       password: "",
-      loggedIn: true,
-      name: "",
-      date: "",
-      amount: "",
-      subURL: "",
+      loggedIn: false,
       subscriptions: []
     }
   }
@@ -80,7 +76,8 @@ class App extends Component {
       name: this.state.name,
       amount: this.state.amount,
       subURL: this.state.subURL,
-      date: this.state.date
+      date: this.state.date,
+      username: this.state.username
     })
       .then(res => this.loadSubs())
       .catch(err => console.log(err));
@@ -131,18 +128,11 @@ class App extends Component {
                 <Route exact path="/create" component={CreateAccount} />
                 <Route exact path="/subscriptions" render={(props) =>
                   <Subscriptions
-                    category={this.state.category}
                     subscriptions={this.state.subscriptions}
-                    onChange={this.handleInputChange}
                   />} />
                 <Route exact path="/addnew" render={(props) =>
                   <CreateSub
-                    name={this.state.name}
-                    date={this.state.date}
-                    amount={this.state.amount}
-                    subURl={this.state.subURL}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleSubscriptionEntry}
+                    username={this.state.username}
                   />} />
               </Switch>
 
