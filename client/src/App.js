@@ -64,25 +64,6 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value })
-  }
-
-  handleSubscriptionEntry = (event) => {
-    event.preventDefault();
-    console.log("handleSubscriptionEntry")
-    API.saveSubscription({
-      name: this.state.name,
-      amount: this.state.amount,
-      subURL: this.state.subURL,
-      date: this.state.date,
-      username: this.state.username
-    })
-      .then(res => this.loadSubs())
-      .catch(err => console.log(err));
-  }
-
   render() {
     return (
 

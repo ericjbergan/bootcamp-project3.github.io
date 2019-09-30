@@ -150,7 +150,7 @@ const subscription = [
     render() {
       const { value, suggestions } = this.state;
       const inputProps = {
-        placeholder: "Type 'c'",
+        placeholder: "Subscription name",
         value,
         onChange: this.onChange
       };
