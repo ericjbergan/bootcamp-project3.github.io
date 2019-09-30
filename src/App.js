@@ -10,7 +10,7 @@ import LoginForm from './components/Login/Login-passport'
 import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
-//import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 import Particles from 'react-particles-js';
 
 const particleOpt ={
