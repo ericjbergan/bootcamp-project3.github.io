@@ -102,7 +102,7 @@ class App extends Component {
             <NavbarPass updateUser={this.updateUser} loggedIn={this.state.loggedIn} />}
 
           {this.state.loggedIn &&
-            <p>Hello, {this.state.username}!</p>
+            <p>{this.state.username}</p>
           }
 
           {!this.state.loggedIn ?
