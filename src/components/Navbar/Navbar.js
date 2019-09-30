@@ -24,7 +24,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/Login">
+                <a class="navbar-brand" href="#">
                     Subscription&nbsp;<i class="fad fa-prescription"></i>
                 </a>
                 <button
@@ -53,7 +53,7 @@ class Navbar extends Component {
                         </il>
                         <il className="nav-item">
                         <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
-                            Log Out
+                            Login
                         </a>
                         </il>
                     </ul>

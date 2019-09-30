@@ -7,11 +7,23 @@ import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
-
 import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
-import { Helmet } from "react-helmet";
+//import { Helmet } from "react-helmet";
+import Particles from 'react-particles-js';
+
+const particleOpt ={
+  particles: {
+    number: {
+      value: 150,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    }
+  }
+}
 
 class App extends Component {
 
@@ -89,9 +101,7 @@ class App extends Component {
 
   render() {
     return (
-
-      <div className="container">
-
+      <div className="">
         <Router>
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -141,7 +151,8 @@ class App extends Component {
                     onClick={this.handleSubscriptionEntry}
                   />} />
               </Switch>
-
+              <Particles 
+              params={particleOpt}/>
             </div>}
         </Router>
 
