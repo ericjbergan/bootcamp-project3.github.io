@@ -7,6 +7,7 @@ function CreateSub(props) {
     return (
         <div>
             <div className="container">
+                <h3>Adding a new subscription</h3>
                 <Wrapper>
                     <form>
                         <div>

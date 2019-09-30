@@ -8,9 +8,15 @@
   margin: 5%;
 }
 
-.content-container{
+.content-container {
   text-align: center;
   font-family: 'Quattrocento', serif;
 }
+
+.container{
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+}
+
 
 /*# sourceMappingURL=App.css.map */
