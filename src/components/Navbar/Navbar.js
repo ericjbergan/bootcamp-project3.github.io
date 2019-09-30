@@ -24,7 +24,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/Login">
                     Subscription&nbsp;<i class="fad fa-prescription"></i>
                 </a>
                 <button
