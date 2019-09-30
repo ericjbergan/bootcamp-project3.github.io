@@ -24,27 +24,41 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <ul className="navbar-nav page-links">
-                    <li className="nav-item">
-                        <Link to="/addnew"
-                            className={window.location.pathname === "/addnew" ? "nav-link active" : "nav-link"}
-                        >
-                            New Subscription
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/subscriptions"
-                            className={window.location.pathname === "/subscriptions" ? "nav-link active" : "nav-link"}
-                        >
+                <a class="navbar-brand" href="#">
+                    Subscription&nbsp;<i class="fad fa-prescription"></i>
+                </a>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggle-icon" />
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContents">
+                    <ul className="navbar-nav m-auto">
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
+                            Subscription Entry
+                        </a>
+                        </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
                             Subscriptions
-                        </Link>
-                    </li>
-                </ul>
-                <div className="form-group logout-link">
-                    <button type="submit" className="btnSubmit" onClick={this.logout} >Logout</button>
+                        </a>
+                        </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
+                            Login
+                        </a>
+                        </il>
+                    </ul>
+
                 </div>
             </nav>
-
         )
     }
 }
