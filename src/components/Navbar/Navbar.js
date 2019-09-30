@@ -38,7 +38,6 @@ class Navbar extends Component {
                 >
                     <span className="navbar-toggle-icon" />
                 </button>
-
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
                         <il className="nav-item">
@@ -60,7 +59,6 @@ class Navbar extends Component {
 
                 </div>
             </nav>
-
         )
     }
 }

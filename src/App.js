@@ -8,18 +8,19 @@ import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
 import Monthly from './components/MonthlySubscription/Monthly'
+import Footer from './components/Footer'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
 import { Helmet } from "react-helmet";
 import Particles from 'react-particles-js';
 
 const particleOpt ={
-  particles: {
+    particles: {
     number: {
       value: 150,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 800,
       }
     }
   }
@@ -103,6 +104,7 @@ class App extends Component {
     return (
       <div className="main-page">
         <Router>
+          <h2>Welcome to Subscription&nbsp;<i class="fad fa-prescription"></i></h2>
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :
@@ -111,7 +113,6 @@ class App extends Component {
           {this.state.loggedIn &&
             <p>{this.state.username}</p>
           }
-          <h2>Welcome to Subscription&nbsp;<i class="fad fa-prescription"></i></h2>
           {!this.state.loggedIn ?
             <div>
               <Switch >
