@@ -7,7 +7,6 @@ import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
-//import Dashboard from './components/Dashboard/Dashboard'
 import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
