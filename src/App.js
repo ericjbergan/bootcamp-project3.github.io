@@ -101,7 +101,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="main-page">
         <Router>
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
@@ -111,10 +111,9 @@ class App extends Component {
           {this.state.loggedIn &&
             <p>{this.state.username}</p>
           }
-
+          <h2>Welcome to Subscription&nbsp;<i class="fad fa-prescription"></i></h2>
           {!this.state.loggedIn ?
             <div>
-
               <Switch >
 
                 <Route
