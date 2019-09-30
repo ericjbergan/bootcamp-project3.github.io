@@ -7,6 +7,7 @@ import Navbar from '../src/components/Navbar/Navbar'
 import CreateAccount from './components/CreateAccount/CreateAccount'
 import Signup from './components/CreateAccount/Sigup-passport';
 import LoginForm from './components/Login/Login-passport'
+
 import Monthly from './components/MonthlySubscription/Monthly'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
@@ -98,7 +99,7 @@ class App extends Component {
             <NavbarPass updateUser={this.updateUser} loggedIn={this.state.loggedIn} />}
 
           {this.state.loggedIn &&
-            <p>Hello, {this.state.username}!</p>
+            <p>{this.state.username}</p>
           }
 
           {!this.state.loggedIn ?

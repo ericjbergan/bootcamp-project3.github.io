@@ -1,5 +1,6 @@
-.navbar{
-  font-family: 'Quattrocento', serif;
+.navbar {
+  font-family: 'Asap Condensed', sans-serif;
+  margin-bottom: 5%;
 }
 
 
@@ -7,6 +8,9 @@
   margin: 5%;
 }
 
-
+.content-container{
+  text-align: center;
+  font-family: 'Quattrocento', serif;
+}
 
 /*# sourceMappingURL=App.css.map */

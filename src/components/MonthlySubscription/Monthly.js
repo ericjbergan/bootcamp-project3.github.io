@@ -17,8 +17,8 @@ function Monthly(props) {
                     </div>
                 </div>
            </div>*/}
-      
         <div className="content-container">
+            <h3>Subscription Dashboard</h3>
             <Wrapper>
             <a href="https://www.netflix.com/youraccount"  > 
             < SubCard />
