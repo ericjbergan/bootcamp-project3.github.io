@@ -1,3 +1,4 @@
+  
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
@@ -10,7 +11,20 @@ import LoginForm from './components/Login/Login-passport'
 import Subscriptions from './components/MonthlySubscription/Subscriptions'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
+import Particles from 'react-particles-js';
 
+
+const particleOpt ={
+  particles: {
+  number: {
+    value: 150,
+    density: {
+      enable: true,
+      value_area: 800,
+    }
+  }
+}
+}
 class App extends Component {
 
   constructor() {
@@ -18,11 +32,7 @@ class App extends Component {
     this.state = {
       username: null,
       password: "",
-      loggedIn: true,
-      name: "",
-      date: "",
-      amount: "",
-      subURL: "",
+      loggedIn: false,
       subscriptions: []
     }
   }
@@ -68,41 +78,21 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value })
-  }
-
-  handleSubscriptionEntry = (event) => {
-    event.preventDefault();
-    console.log("handleSubscriptionEntry")
-    API.saveSubscription({
-      name: this.state.name,
-      amount: this.state.amount,
-      subURL: this.state.subURL,
-      date: this.state.date
-    })
-      .then(res => this.loadSubs())
-      .catch(err => console.log(err));
-  }
-
   render() {
     return (
 
-      <div className="container">
+      <div className="main-page">
 
         <Router>
-
-          <div className="jumbotron">
-            <h1>Subscription Prescription</h1>
-          </div>
+        <h2>Welcome to Subscription&nbsp;<i class="fad fa-prescription"></i></h2>
+  
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :
             <NavbarPass updateUser={this.updateUser} loggedIn={this.state.loggedIn} />}
 
           {this.state.loggedIn &&
-            <p>{this.state.username}</p>
+            <p>Hello, {this.state.username}!</p>
           }
 
           {!this.state.loggedIn ?
@@ -131,21 +121,15 @@ class App extends Component {
                 <Route exact path="/create" component={CreateAccount} />
                 <Route exact path="/subscriptions" render={(props) =>
                   <Subscriptions
-                    category={this.state.category}
                     subscriptions={this.state.subscriptions}
-                    onChange={this.handleInputChange}
                   />} />
                 <Route exact path="/addnew" render={(props) =>
                   <CreateSub
-                    name={this.state.name}
-                    date={this.state.date}
-                    amount={this.state.amount}
-                    subURl={this.state.subURL}
-                    onChange={this.handleInputChange}
-                    onClick={this.handleSubscriptionEntry}
+                    username={this.state.username}
                   />} />
               </Switch>
-
+              <Particles 
+              params={particleOpt}/>
             </div>}
         </Router>
 

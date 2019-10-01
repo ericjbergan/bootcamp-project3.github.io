@@ -4,9 +4,9 @@ import  SubCard  from "../SubCards/Netflix";
 import Wrapper from '../SubCards/Wrapper';
 import AddNew from "../SubCards/AddNew"
 function Monthly(props) {
+    console.log(props.subscriptions.value);
     return (
-        <div>
-           {/* <div>
+<div className="content-container">           {/* <div>
                 <div className="landing-link"><Link to="/login">Login</Link></div>
                 <div className="landing-link"><Link to="/create">Create Account</Link></div>
             </div>
@@ -18,24 +18,23 @@ function Monthly(props) {
                 </div>
            </div>*/}
       
-        <div className="content-container">
+        
             <Wrapper>
-            <a href="https://www.netflix.com/youraccount"  > 
-            < SubCard />
-            </a>
-            <a href="https://www.netflix.com/youraccount"  > 
-            < SubCard />
-            </a>
-            <a href= "/addnew" > 
-            < AddNew />
-            </a>
             
-           
+            < SubCard />
+            
             
 
+            
+           
+
+           
             </Wrapper>
-        </div>
-        
+
+            <AddNew/>
+
+           
+
         </div>
     )
 }
