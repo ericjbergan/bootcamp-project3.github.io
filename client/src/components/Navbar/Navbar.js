@@ -55,8 +55,12 @@ class Navbar extends Component {
                             Login
                         </a>
                         </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
+                            Logout
+                        </a>
+                        </il>
                     </ul>
-
                 </div>
             </nav>
         )
