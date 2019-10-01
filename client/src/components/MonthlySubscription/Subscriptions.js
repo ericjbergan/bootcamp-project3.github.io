@@ -4,7 +4,7 @@ import  SubCard  from "../SubCards/Netflix";
 import Wrapper from '../SubCards/Wrapper';
 import AddNew from "../SubCards/AddNew"
 function Monthly(props) {
-    console.log(props.subscriptions.value);
+    // console.log(props.subscriptions.value);
     return (
 <div className="content-container">           {/* <div>
                 <div className="landing-link"><Link to="/login">Login</Link></div>
