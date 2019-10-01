@@ -9,5 +9,9 @@
   width: 100%;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 
 /*# sourceMappingURL=style.css.map */
