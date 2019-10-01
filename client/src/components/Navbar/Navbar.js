@@ -39,26 +39,29 @@ class Navbar extends Component {
                 >
                     <span className="navbar-toggle-icon" />
                 </button>
-
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
-                        <li className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
-                                Subscription Entry
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
-                                Subscriptions
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
-                                Log Out
-                            </a>
-                        </li>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
+                            Subscription Entry
+                        </a>
+                        </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
+                            Subscriptions
+                        </a>
+                        </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
+                            Login
+                        </a>
+                        </il>
+                        <il className="nav-item">
+                        <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
+                            Logout
+                        </a>
+                        </il>
                     </ul>
-
                 </div>
             </nav>
         )

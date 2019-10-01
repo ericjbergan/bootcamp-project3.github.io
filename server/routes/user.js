@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../database/models/user')
+const User = require('../models/user')
 const passport = require('../passport')
 const userController = require('../controllers/userController')
 
@@ -58,7 +58,7 @@ router.get('/', (req, res, next) => {
 })
 
 
-router.get('/userSubscritions', (req, res, next) => {
+router.get('/userSubscriptions', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
     if (req.user) {
