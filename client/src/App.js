@@ -10,7 +10,20 @@ import LoginForm from './components/Login/Login-passport'
 import Subscriptions from './components/MonthlySubscription/Subscriptions'
 import './App.css';
 import CreateSub from "./components/CreateSub/CreateSub";
+import Particles from 'react-particles-js';
 
+
+const particleOpt ={
+  particles: {
+  number: {
+    value: 150,
+    density: {
+      enable: true,
+      value_area: 800,
+    }
+  }
+}
+}
 class App extends Component {
 
   constructor() {
@@ -67,13 +80,11 @@ class App extends Component {
   render() {
     return (
 
-      <div className="container">
+      <div className="main-page">
 
         <Router>
-
-          <div className="jumbotron">
-            <h1>Subscription Prescription</h1>
-          </div>
+        <h2>Welcome to Subscription&nbsp;<i class="fad fa-prescription"></i></h2>
+  
           {this.state.loggedIn ?
             <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             :
@@ -116,7 +127,8 @@ class App extends Component {
                     username={this.state.username}
                   />} />
               </Switch>
-
+              <Particles 
+              params={particleOpt}/>
             </div>}
         </Router>
 
