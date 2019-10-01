@@ -170,7 +170,8 @@ class CreateSub extends Component {
                             </div>
                         </div>
                         <div className="line1">
-                            <p>Subscription URL: </p><input type="text" size="50" name="subURL"
+                            <p>Subscription URL: </p>
+                            <input type="text" size="50" name="subURL"
                                 placeholder="Paste URL here" onChange={this.handleInputChange} value={this.state.subURL} />
                         </div>
                         <div className="line1">
