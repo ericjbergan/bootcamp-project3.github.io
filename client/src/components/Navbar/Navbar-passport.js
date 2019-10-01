@@ -12,7 +12,7 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="navbar App-header" id="nav-container">
+                <header className="navbar navbar-expand-lg navbar-light bg-light">
                     <div>
                         {loggedIn ? (
                             <section className="navbar-section">
@@ -20,14 +20,22 @@ class Navbar extends Component {
                             </section>
                         ) : (
                             <section className="navbar-section">
-                                    <Link to="/login" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">login</span>
-                                    </Link>
-                                    <Link to="/signup" className="btn btn-link">
-                                        <span className="text-secondary">sign up</span>
-                                    </Link>
-                                </section>
-                            )}
+                                <div className="collapse navbar-collapse" id="navbarSupportedContents">
+                                    <ul className="navbar-nav m-auto">
+                                        <il className="nav-item">
+                                            <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
+                                            Login
+                                            </a>
+                                        </il>
+                                        <il className="nav-item">
+                                            <a className="nav-link text-dark text-uppercase ml-5" href="/signup">
+                                            Sign Up
+                                            </a>
+                                        </il>
+                                    </ul>
+                                </div>
+                            </section>
+                        )}
                     </div>
                 </header>
             </div>
