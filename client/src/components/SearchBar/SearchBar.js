@@ -171,4 +171,3 @@ const subscription = [
   }
   
   export default SearchBar;
-  
