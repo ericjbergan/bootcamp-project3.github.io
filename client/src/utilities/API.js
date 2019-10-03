@@ -7,6 +7,7 @@ export default {
   },
   // Get the subscription with the given id
   getSubscription: function(id) {
+    console.log('api.js, getSub');
     return axios.get("/api/subscriptions/" + id);
   },
   // Saves a subscription to the database

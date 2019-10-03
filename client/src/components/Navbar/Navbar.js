@@ -40,26 +40,26 @@ class Navbar extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
-                        <il className="nav-item">
+                        <li className="nav-item">
                         <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
                             Subscription Entry
                         </a>
-                        </il>
-                        <il className="nav-item">
+                        </li>
+                        <li className="nav-item">
                         <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
                             Subscriptions
                         </a>
-                        </il>
-                        <il className="nav-item">
+                        </li>
+                        <li className="nav-item">
                         <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
                             Login
                         </a>
-                        </il>
-                        <il className="nav-item">
+                        </li>
+                        <li className="nav-item">
                         <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
                             Logout
                         </a>
-                        </il>
+                        </li>
                     </ul>
                 </div>
             </nav>
