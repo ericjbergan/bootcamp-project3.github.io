@@ -13,6 +13,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByusername: function(req, res) {
+    console.log("controller");
     db.Subscription.find({username:req.params.id})
       .then(dbSubscription => res.json(dbSubscription))
       .catch(err => res.status(422).json(err));

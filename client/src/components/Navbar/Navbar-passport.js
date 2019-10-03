@@ -6,8 +6,8 @@ class Navbar extends Component {
 
     render() {
         const loggedIn = this.props.loggedIn;
-        console.log('navbar render, props: ')
-        console.log(this.props);
+        // console.log('navbar render, props: ')
+        // console.log(this.props);
 
         return (
             <div>
@@ -22,16 +22,16 @@ class Navbar extends Component {
                             <section className="navbar-section">
                                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                                     <ul className="navbar-nav m-auto">
-                                        <il className="nav-item">
+                                        <li className="nav-item">
                                             <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
                                             Login
                                             </a>
-                                        </il>
-                                        <il className="nav-item">
+                                        </li>
+                                        <li className="nav-item">
                                             <a className="nav-link text-dark text-uppercase ml-5" href="/signup">
                                             Sign Up
                                             </a>
-                                        </il>
+                                        </li>
                                     </ul>
                                 </div>
                             </section>

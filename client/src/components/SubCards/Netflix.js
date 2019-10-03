@@ -1,9 +1,9 @@
+
 import React, { Component} from 'react';
 // import React from 'react';
 import "./style.css";
 // import { wrap } from 'module';
 var subscriptions = require( "../../data/subscriptions");
-
 
 const subscription = [
     {     
@@ -56,6 +56,7 @@ const subscription = [
 
 
 class SubCard extends Component {
+
     render(){
         console.log(subscriptions);
     return (
@@ -86,6 +87,7 @@ class SubCard extends Component {
       </div>
       
     )
+
     }
 }
 
