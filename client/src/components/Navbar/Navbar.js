@@ -49,13 +49,13 @@ class Navbar extends Component {
                         <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
                             Subscriptions
                         </a>
+
                         </li>
-                        <li className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/Login">
-                            Login
-                        </a>
-                        </li>
-                        <li className="nav-item">
+
+
+                        
+                        <il className="nav-item">
+
                         <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
                             Logout
                         </a>
