@@ -4,8 +4,9 @@ import API from '../../utilities/API'
 import AutosuggestHighlightMatch from "autosuggest-highlight/match";
 import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
 import Autosuggest from 'react-autosuggest';
-import './style.css'
-import SearchBar from "../SearchBar/SearchBar"
+import './style.css';
+import SearchBar from "../SearchBar/SearchBar";
+import App from "../../App";
 
 const subscription = [
     {
@@ -170,8 +171,7 @@ class CreateSub extends Component {
                             </div>
                         </div>
                         <div className="line1">
-                            <p>Subscription URL: </p>
-                            <input type="text" size="50" name="subURL"
+                            <p>Subscription URL: </p><input type="text" size="50" name="subURL"
                                 placeholder="Paste URL here" onChange={this.handleInputChange} value={this.state.subURL} />
                         </div>
                         <div className="line1">
@@ -202,4 +202,3 @@ class CreateSub extends Component {
 }
 
 export default CreateSub;
-

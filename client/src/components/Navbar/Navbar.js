@@ -41,18 +41,18 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContents">
                     <ul className="navbar-nav m-auto">
                         <li className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
-                            Subscription Entry
+                            <a className="nav-link text-dark text-uppercase ml-5" href="/addnew">
+                                Subscription Entry
                         </a>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
-                            Subscriptions
+                            <a className="nav-link text-dark text-uppercase ml-5" href="/Subscriptions">
+                                Subscriptions
                         </a>
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
-                            Logout
+                            <a className="nav-link text-dark text-uppercase ml-5" onClick={this.logout}>
+                                Logout
                         </a>
                         </li>
                     </ul>
